@@ -3,7 +3,7 @@ require_once __DIR__ . '/functions.php';
 
 $dbh = connect_db();
 
-$keyword = $_GET['keyword'];
+$keyword = filter_input(INPUT_GET, 'keyword');
 
 if (empty($keyword)) {
     $sql = 'SELECT * FROM animals';
